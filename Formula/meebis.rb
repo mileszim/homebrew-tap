@@ -1,25 +1,25 @@
 class Meebis < Formula
   desc "A fast, disposable, in-memory Redis-compatible server for ephemeral dev work"
   homepage "https://github.com/mileszim/meebis"
-  version "0.5.0"
+  version "0.6.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mileszim/meebis/releases/download/v0.5.0/meebis-aarch64-apple-darwin.tar.xz"
-      sha256 "efcfdbdb9b535d128bc27ace55a71e77678d29c5bb13f8b3557f4cded0ba7c3b"
+      url "https://github.com/mileszim/meebis/releases/download/v0.6.0/meebis-aarch64-apple-darwin.tar.xz"
+      sha256 "be1bbecfa9736bc830169ef848f9cf479a89354c226350f28af4ead8fa188c78"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mileszim/meebis/releases/download/v0.5.0/meebis-x86_64-apple-darwin.tar.xz"
-      sha256 "b7ba930712f98e7ffe9901e0605640b6591fe3af10f0af2147e1f77c37a7bc23"
+      url "https://github.com/mileszim/meebis/releases/download/v0.6.0/meebis-x86_64-apple-darwin.tar.xz"
+      sha256 "097a915de8ddf4887001fef05cbec4f544bac4c7eaab0f963eef53f0bc97e13c"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mileszim/meebis/releases/download/v0.5.0/meebis-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2abdb974b56b3bdeed12f0766f9474ff8ed5572c51ac601a99d0bfbd330a5c85"
+      url "https://github.com/mileszim/meebis/releases/download/v0.6.0/meebis-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3f3247187b73937ce84d19308a29a262e4edc4e3af15ea43213a7f29285f40e5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mileszim/meebis/releases/download/v0.5.0/meebis-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "86311cc2cf2cad636d99983fa2d2327a0e999969c55addc59d0730e78c4b6c5f"
+      url "https://github.com/mileszim/meebis/releases/download/v0.6.0/meebis-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "a29458689cfb0d1dc3ca71ee4b91c6e3e7f4291ad129c28977aaaf231b33e652"
     end
   end
   license "MIT"
@@ -47,10 +47,18 @@ class Meebis < Formula
   end
 
   def install
-    bin.install "meebis" if OS.mac? && Hardware::CPU.arm?
-    bin.install "meebis" if OS.mac? && Hardware::CPU.intel?
-    bin.install "meebis" if OS.linux? && Hardware::CPU.arm?
-    bin.install "meebis" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "meebis"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "meebis"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "meebis"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "meebis"
+    end
 
     install_binary_aliases!
 
