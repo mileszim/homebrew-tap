@@ -1,25 +1,25 @@
 class Meebis < Formula
   desc "A fast, disposable, in-memory Redis-compatible server for ephemeral dev work"
   homepage "https://github.com/mileszim/meebis"
-  version "0.14.0"
+  version "0.15.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mileszim/meebis/releases/download/v0.14.0/meebis-aarch64-apple-darwin.tar.xz"
-      sha256 "26723f23f3699c5fb8fc57b04d8082197e49c99e72d9301923ec9d92550ade7c"
+      url "https://github.com/mileszim/meebis/releases/download/v0.15.0/meebis-aarch64-apple-darwin.tar.xz"
+      sha256 "a62235a271fd336fae61188a337fdb85f2b019a471f74d84e4488d5721a15a17"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mileszim/meebis/releases/download/v0.14.0/meebis-x86_64-apple-darwin.tar.xz"
-      sha256 "53be129dc987cfef03b81b40e8d21a3b0e8d75ac0b2da0f76bf21134c7b9851b"
+      url "https://github.com/mileszim/meebis/releases/download/v0.15.0/meebis-x86_64-apple-darwin.tar.xz"
+      sha256 "4ef1e93acdbc0011272b16f13f510fe5cfcbf0425aa92509b874a4647e220e73"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mileszim/meebis/releases/download/v0.14.0/meebis-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ae3c3110635294b1dc4fde938b81a7622fc0782f3d5825e360d29ec746924ece"
+      url "https://github.com/mileszim/meebis/releases/download/v0.15.0/meebis-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8e40cf5e83f93cc337a8fc8bd389eda6c0279099aa599ed195f8afee5f6a1d22"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mileszim/meebis/releases/download/v0.14.0/meebis-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ec841814c736994b5346aedf24b70cadb792610ae993d1173e64b37d670bfbaa"
+      url "https://github.com/mileszim/meebis/releases/download/v0.15.0/meebis-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "bb204efa2adc5e1b918e99d52861e5786c6e08a6d28fd2f37bab0e840ef8a290"
     end
   end
   license "MIT"
